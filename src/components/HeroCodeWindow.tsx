@@ -11,10 +11,13 @@ const developer = {
   name: "Rashidali Sunasara",
   education: "LJ Polytechnic (Information Technology, Sem VI)",
   location: "Ahmedabad, Gujarat, India",
-  languages: ["Python", "Java", "PHP", "JavaScript", "C"],
-  databases: ["MySQL", "SQLite"],
+  languages: ["Python", "Java", "PHP", "JavaScript", "TypeScript"],
+  activeProjects: [
+    "VoxelCraft (3D Sandbox with Three.js & AI)",
+    "EduPortal AI (College Capstone Project)"
+  ],
   internship: "Infomatica Labs (Web Development)",
-  certifications: ["Google Cybersecurity", "Packt JS DOM"],
+  certifications: "10 Verified (Google, IBM, UPenn, CU Boulder, BITS Pilani...)",
   seeking: "Internship & Junior Developer Opportunities",
   isReadyToBuild: true
 };`;
@@ -77,11 +80,20 @@ const developer = {
             <span className="text-emerald-300">&quot;Java&quot;</span>,{" "}
             <span className="text-emerald-300">&quot;PHP&quot;</span>,{" "}
             <span className="text-emerald-300">&quot;JavaScript&quot;</span>,{" "}
-            <span className="text-emerald-300">&quot;C&quot;</span>],
+            <span className="text-emerald-300">&quot;TypeScript&quot;</span>],
+          </p>
+          <p>
+            <span className="text-neutral-400">currentlyBuilding:</span> [
+            <span className="text-cyan-300">&quot;VoxelCraft (3D AI Sandbox)&quot;</span>,{" "}
+            <span className="text-cyan-300">&quot;EduPortal AI (College)&quot;</span>],
           </p>
           <p>
             <span className="text-neutral-400">recentInternship:</span>{" "}
             <span className="text-amber-300">&quot;Infomatica Labs (2 Months)&quot;</span>,
+          </p>
+          <p>
+            <span className="text-neutral-400">certifications:</span>{" "}
+            <span className="text-amber-300">&quot;10 Verified (Google, IBM, UPenn, BITS...)&quot;</span>,
           </p>
           <p>
             <span className="text-neutral-400">availableForHire:</span>{" "}

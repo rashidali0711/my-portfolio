@@ -200,8 +200,8 @@ export function BentoGrid() {
 
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Certifications</h3>
 
-              <div className="space-y-3.5">
-                {certifications.map((cert, idx) => (
+              <div className="space-y-3">
+                {certifications.slice(0, 3).map((cert, idx) => (
                   <div key={idx} className="p-3 rounded-xl bg-slate-100/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5 space-y-1 hover:border-amber-400/40 transition-colors">
                     <div className="flex items-center gap-2">
                       {cert.issuer === "Google" ? (
@@ -209,24 +209,28 @@ export function BentoGrid() {
                       ) : (
                         <FileCode2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                       )}
-                      <span className="text-xs font-bold text-slate-900 dark:text-white">{cert.title}</span>
+                      <span className="text-xs font-bold text-slate-900 dark:text-white line-clamp-1">{cert.title}</span>
                     </div>
                     <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-neutral-400">
                       <span>{cert.issuer}</span>
                       <span className="text-emerald-600 dark:text-emerald-400 font-semibold">✓ Verified</span>
                     </div>
-                    <p className="text-[11px] text-slate-600 dark:text-neutral-400 leading-snug pt-1">
-                      {cert.description}
-                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.06] text-center">
+            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/[0.06] flex items-center justify-between text-xs">
               <span className="text-[11px] text-slate-500 dark:text-neutral-500 font-mono">
-                Issued by Google & Packt Publishing
+                10 Verified Credentials
               </span>
+              <a
+                href="#certifications"
+                className="text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 font-medium inline-flex items-center gap-1 group"
+              >
+                <span>View All</span>
+                <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+              </a>
             </div>
           </div>
         </ScrollReveal>

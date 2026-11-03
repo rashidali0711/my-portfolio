@@ -22,6 +22,7 @@ export function Footer() {
     { label: "Technical Skills", href: "#skills" },
     { label: "Featured Projects", href: "#projects" },
     { label: "Experience & Journey", href: "#experience" },
+    { label: "Verified Certifications", href: "#certifications" },
     { label: "Services & Capabilities", href: "#services" },
     { label: "Contact & Collaboration", href: "#contact" },
   ];

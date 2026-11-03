@@ -337,6 +337,14 @@ export function Skills() {
           accentColor: "from-violet-400 to-fuchsia-500",
         },
         {
+          name: "Three.js & 3D WebGL",
+          level: "Working Knowledge",
+          experience: "Procedural 3D Voxel Meshing",
+          appliedIn: "VoxelCraft Sandbox Engine (AI-Assisted)",
+          iconBg: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border-cyan-500/20",
+          accentColor: "from-cyan-400 to-blue-500",
+        },
+        {
           name: "VS Code & XAMPP Stack",
           level: "Proficient",
           experience: "Full Local Dev Environment",

@@ -41,6 +41,8 @@ yarn-error.log*
 
 # documents / raw assets
 *.pdf
+!public/certificates/*.pdf
+PROJECT_REPORT.md
 
 # typescript
 *.tsbuildinfo

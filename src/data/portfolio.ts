@@ -4,13 +4,15 @@ export interface Project {
   subtitle?: string;
   description: string;
   longDescription: string;
-  category: "Full Stack" | "Python & AI" | "Cybersecurity" | "Java & Desktop" | "React";
+  category: "Full Stack" | "Python & AI" | "Cybersecurity" | "Java & Desktop" | "React" | "WebGL & Game";
   tags: string[];
   featured: boolean;
   liveUrl?: string;
   githubUrl?: string;
   metrics?: string;
   reportFile?: string;
+  status?: "In Active Development" | "Completed";
+  ownership?: "Personal Project (Built with AI)" | "College Academic Project" | "Industry Internship";
 }
 
 export interface Experience {
@@ -26,10 +28,18 @@ export interface Experience {
 }
 
 export interface Certification {
+  id: string;
   title: string;
   issuer: string;
-  iconName: string;
+  organization: string;
+  category: "AI & Security" | "Programming & CS" | "Web & Development" | "Engineering & Professional";
+  issueDate: string;
+  credentialUrl?: string;
+  pdfFile: string;
+  skills: string[];
   description: string;
+  instructor?: string;
+  featured?: boolean;
 }
 
 export interface SkillCategory {
@@ -64,17 +74,17 @@ export const portfolioData = {
     twitter: "https://github.com/rashidali0711",
     resumeUrl: "#",
     yearsOfCoding: "3+",
-    projectsCompleted: 5,
-    certificationsCount: 2,
+    projectsCompleted: 6,
+    certificationsCount: 10,
     internshipDuration: "2 Months",
   },
 
   about: {
     headline: "Turning ideas into clean, functional, and dependable software.",
     paragraphs: [
-      "I am an Information Technology student at LJ University (LJ Polytechnic, Ahmedabad) currently in my 3rd year / 6th semester. I enjoy building web applications, systems tools, and exploring the intersection of practical web engineering with AI and cybersecurity.",
+      "I am an Information Technology student at LJ University (LJ Polytechnic, Ahmedabad) currently in my 3rd year / 6th semester. I enjoy building web applications, systems tools, and exploring the intersection of practical web engineering with modern AI tools and cybersecurity.",
       "Recently, I completed a 6-week web development internship at Infomatica Labs (Sidhpur, Gujarat), where I built an enterprise Attendance and Leaves Management System from scratch using PHP, MySQL, Chart.js, and FullCalendar with an innovative hardware device-certificate verification system.",
-      "Alongside web development, I have developed a desktop Network Security Monitoring & Firewall Simulator in Python, a single-file TaskFlow manager in Java Swing, and an AI-powered educational portal integrating FAISS vector search and Gemini API."
+      "Currently, I am actively building VoxelCraft — my own in-browser 3D voxel sandbox game engine utilizing Three.js and AI-assisted workflows — while concurrently engineering the EduPortal + AI course assistant as my college diploma capstone project at LJ Polytechnic."
     ],
     quickFacts: [
       { label: "College", value: "LJ Polytechnic" },
@@ -86,16 +96,137 @@ export const portfolioData = {
 
   certifications: [
     {
+      id: "cert-cybersecurity-google",
       title: "Foundations of Cybersecurity",
       issuer: "Google",
-      iconName: "ShieldCheck",
-      description: "Core security principles, network defense, threat detection, and security posture management.",
+      organization: "Google Career Certificates",
+      category: "AI & Security",
+      issueDate: "Sep 2026",
+      credentialUrl: "https://coursera.org/verify/3ETYEOA3G4V9",
+      pdfFile: "/certificates/Foundations of Cybersecurity.pdf",
+      skills: ["Network Security", "Threat Detection", "SIEM Tools", "Security Compliance"],
+      description: "Comprehensive coverage of core cybersecurity domains, risk management frameworks, network defense protocols, and security posture evaluation.",
+      instructor: "Amanda Brophy (Global Director, Google Career Certificates)",
+      featured: true,
     },
     {
-      title: "JavaScript DOM Programming",
+      id: "cert-ai-ibm",
+      title: "Introduction to Artificial Intelligence (AI)",
+      issuer: "IBM",
+      organization: "IBM Skills Network",
+      category: "AI & Security",
+      issueDate: "Feb 2026",
+      credentialUrl: "https://coursera.org/verify/33RB18868T3R",
+      pdfFile: "/certificates/Introduction to AI.pdf",
+      skills: ["Generative AI", "Machine Learning", "Neural Networks", "AI Ethics"],
+      description: "Rigorous curriculum covering artificial intelligence fundamentals, machine learning algorithms, deep learning applications, and ethical considerations.",
+      instructor: "Rav Ahuja (Global Program Director, IBM Skills Network)",
+      featured: true,
+    },
+    {
+      id: "cert-python-upenn",
+      title: "Introduction to Python Programming",
+      issuer: "University of Pennsylvania",
+      organization: "Penn Engineering (UPenn)",
+      category: "Programming & CS",
+      issueDate: "Sep 2025",
+      credentialUrl: "https://coursera.org/verify/8Z8H1SS8K0GN",
+      pdfFile: "/certificates/Python.pdf",
+      skills: ["Python 3", "Data Structures", "Algorithms", "Modular Code"],
+      description: "Algorithmic problem solving, Python data structures, functional modularity, and object-oriented program design.",
+      instructor: "Brandon Krakowsky (Lecturer, School of Engineering, UPenn)",
+      featured: true,
+    },
+    {
+      id: "cert-sql-cuboulder",
+      title: "The Structured Query Language (SQL)",
+      issuer: "University of Colorado Boulder",
+      organization: "CU Boulder Computer Science",
+      category: "Programming & CS",
+      issueDate: "Sep 2025",
+      credentialUrl: "https://coursera.org/verify/OJIRPW18C97X",
+      pdfFile: "/certificates/SQL.pdf",
+      skills: ["Relational Database", "Complex Joins", "Aggregations", "Subqueries"],
+      description: "Advanced relational database querying, multi-table joins, subqueries, grouping aggregations, and schema design.",
+      instructor: "Alan Paradise (Teaching Professor, Computer Science, CU Boulder)",
+      featured: true,
+    },
+    {
+      id: "cert-js-dom-packt",
+      title: "JavaScript DOM - Interactive and Dynamic Web Pages",
       issuer: "Packt Publishing",
-      iconName: "FileCode2",
-      description: "Advanced DOM manipulation, event bubbling/delegation, and dynamic interactive web interfaces.",
+      organization: "Packt Web Development",
+      category: "Web & Development",
+      issueDate: "Sep 2026",
+      credentialUrl: "https://coursera.org/verify/DQDITN7FFCY2",
+      pdfFile: "/certificates/JavaScript DOM.pdf",
+      skills: ["DOM APIs", "Event Bubbling", "Dynamic Rendering", "Browser APIs"],
+      description: "In-depth dynamic DOM manipulation, event-driven architecture, interactive UI components, and modern vanilla JavaScript.",
+      featured: true,
+    },
+    {
+      id: "cert-internship-infomatica",
+      title: "Summer Internship in Full-Stack Web Development",
+      issuer: "Infomatica Labs",
+      organization: "Infomatica Labs Pvt. Ltd.",
+      category: "Web & Development",
+      issueDate: "Jun 2026",
+      pdfFile: "/certificates/Summer Internship Certificate.pdf",
+      skills: ["PHP 8", "MySQL Relational Schemas", "HttpOnly Auth", "Chart.js"],
+      description: "6-week intensive production internship. Designed and engineered the Attendance & Leave Management web portal with 17 MySQL tables.",
+      instructor: "Hasan Sunasara (Internship Mentor, Infomatica Labs)",
+      featured: true,
+    },
+    {
+      id: "cert-math-bits-pilani",
+      title: "Basic Engineering Mathematics",
+      issuer: "BITS Pilani",
+      organization: "Birla Institute of Technology & Science, Pilani",
+      category: "Engineering & Professional",
+      issueDate: "Apr 2025",
+      credentialUrl: "https://coursera.org/verify/VJD7VCPADZPG",
+      pdfFile: "/certificates/Engeneering Mathematics.pdf",
+      skills: ["Calculus", "Linear Algebra", "Mathematical Modeling", "Logic"],
+      description: "Core mathematical foundations for computer science and engineering, including matrices, differential equations, and computational models.",
+      instructor: "Rajiv Tandon (CEO, Strategic Initiatives, BITS Pilani)",
+    },
+    {
+      id: "cert-wordpress-packt",
+      title: "WordPress 101 - The Complete Guide",
+      issuer: "Packt Publishing",
+      organization: "Packt Web Engineering",
+      category: "Web & Development",
+      issueDate: "Apr 2025",
+      credentialUrl: "https://coursera.org/verify/OKYIGM5DGAZT",
+      pdfFile: "/certificates/WordPress.pdf",
+      skills: ["CMS Architecture", "Theme Customization", "Plugin Setup", "Hosting"],
+      description: "Full-spectrum CMS architecture, custom themes, plugin configuration, security best practices, and production site deployment.",
+    },
+    {
+      id: "cert-interpersonal-ibm",
+      title: "Developing Interpersonal Skills",
+      issuer: "IBM",
+      organization: "IBM Skills Network",
+      category: "Engineering & Professional",
+      issueDate: "Dec 2024",
+      credentialUrl: "https://coursera.org/verify/HEIL6NFDQZAF",
+      pdfFile: "/certificates/Developing Interpersonal Skills.pdf",
+      skills: ["Workplace Communication", "Active Listening", "Teamwork", "Agility"],
+      description: "Professional technical team communication, stakeholder collaboration, conflict resolution strategies, and engineering workplace agility.",
+      instructor: "Rav Ahuja (Global Program Director, IBM Skills Network)",
+    },
+    {
+      id: "cert-scratch-hkust",
+      title: "Programming with Scratch",
+      issuer: "HKUST",
+      organization: "Hong Kong University of Science and Technology",
+      category: "Programming & CS",
+      issueDate: "Dec 2024",
+      credentialUrl: "https://coursera.org/verify/EV4MC6PKNSBV",
+      pdfFile: "/certificates/Scratch.pdf",
+      skills: ["Computational Thinking", "Visual Programming", "Event-Driven Logic"],
+      description: "Foundational computer science principles, event-driven architectures, loops, conditionals, and creative interactive program design.",
+      instructor: "Prof. Kenneth W T Leung (Computer Science and Engineering, HKUST)",
     },
   ] as Certification[],
 
@@ -151,6 +282,36 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "voxelcraft-3d",
+      title: "VoxelCraft — 3D Browser Voxel Sandbox",
+      subtitle: "Personal Project • Active Development (AI-Assisted)",
+      description: "An authentic Minecraft-inspired 3D voxel sandbox running completely in the browser via Three.js with zero image or audio asset dependencies. Features procedural chunk meshing, DDA raycasting, crafting, 3D extruded voxel tools, and 100% procedurally synthesized Web Audio.",
+      longDescription: "Built independently with AI-assisted engineering, VoxelCraft is an authentic client-side 3D voxel sandbox game engine built in TypeScript, Three.js, and Vite. The entire world, block textures, lighting, mob AI (zombies, skeletons, creepers), archery physics, dynamic TNT explosions, hunger/armor mechanics, and 3D extruded voxel items are generated at runtime. Features a 100% procedural sound engine synthesized via the Web Audio API with zero external media files. Tested with 170 unit tests and Playwright smoke tests, and deployed live on Cloudflare Pages.",
+      category: "WebGL & Game",
+      tags: ["TypeScript", "Three.js", "Vite", "WebGL", "Web Audio API", "AI-Assisted", "Playwright", "Procedural Generation"],
+      featured: true,
+      liveUrl: "https://voxelcraft-dmr.pages.dev",
+      githubUrl: "https://github.com/rashidali0711/VoxelCraft",
+      metrics: "Active Development • 170 Unit Tests • Zero Media Files",
+      status: "In Active Development",
+      ownership: "Personal Project (Built with AI)",
+    },
+    {
+      id: "eduportal-ai",
+      title: "EduPortal + AI Course Assistant",
+      subtitle: "LJ Polytechnic College Capstone Project • In Active Development",
+      description: "An academic management LMS portal with role-based access for students, teachers, and admins, coupled with a document-grounded AI course assistant. Currently in active development for LJ Polytechnic diploma capstone.",
+      longDescription: "Currently under active development as an academic diploma capstone at LJ Polytechnic (LJ University). The platform manages courses, syllabus chapters, student attendance, assignments, and grade results across 33 relational MySQL database tables. Features a document-grounded RAG (Retrieval-Augmented Generation) assistant using PDF OCR, document chunking, Sentence Transformers, and FAISS vector search connected to the Gemini API to answer student queries strictly from verified course syllabi.",
+      category: "Python & AI",
+      tags: ["Python", "Flask", "MySQL", "FAISS", "Sentence Transformers", "Gemini API", "JavaScript", "College Project"],
+      featured: true,
+      githubUrl: "https://github.com/rashidali0711",
+      metrics: "College Capstone • Active Development • 33 Tables • RAG Vector Search",
+      reportFile: "FULL PROJECT REPORT.pdf",
+      status: "In Active Development",
+      ownership: "College Academic Project",
+    },
+    {
       id: "infomatica-attendance",
       title: "Attendance & Leave Management System",
       subtitle: "Infomatica Labs Internship Project",
@@ -162,6 +323,8 @@ export const portfolioData = {
       githubUrl: "https://github.com/rashidali0711",
       metrics: "10k+ Lines of Code • 17 DB Tables • 3 User Roles",
       reportFile: "Infomatica_Attendance_System_Project_Report.pdf",
+      status: "Completed",
+      ownership: "Industry Internship",
     },
     {
       id: "nsmfs-firewall",
@@ -175,19 +338,8 @@ export const portfolioData = {
       githubUrl: "https://github.com/rashidali0711",
       metrics: "Live Packet Engine • 7 Security Pages • Dark Mode GUI",
       reportFile: "NSMFS_Report.pdf",
-    },
-    {
-      id: "eduportal-ai",
-      title: "EduPortal + AI Course Assistant",
-      subtitle: "Intelligent Academic LMS & RAG Assistant",
-      description: "An academic management portal with role-based access for students, teachers, and admins, integrated with a document-grounded AI course tutor.",
-      longDescription: "Developed an academic management system supporting courses, syllabus chapters, assignments, and exam results across 33 relational database tables. Includes a RAG (Retrieval-Augmented Generation) assistant using PDF OCR, document chunking, Sentence Transformers, and FAISS vector search connected to the Gemini API to answer student questions strictly from verified course materials.",
-      category: "Python & AI",
-      tags: ["Python", "Flask", "MySQL", "FAISS", "Sentence Transformers", "Gemini API", "JavaScript"],
-      featured: true,
-      githubUrl: "https://github.com/rashidali0711",
-      metrics: "33 Database Tables • Multi-Role RBAC • RAG Vector Search",
-      reportFile: "FULL PROJECT REPORT.pdf",
+      status: "Completed",
+      ownership: "College Academic Project",
     },
     {
       id: "taskflow-java",
@@ -201,6 +353,8 @@ export const portfolioData = {
       githubUrl: "https://github.com/rashidali0711",
       metrics: "1,758 LOC • 37 Inner Classes • Zero External Dependencies",
       reportFile: "TaskFlow_Project_Documentation.pdf",
+      status: "Completed",
+      ownership: "College Academic Project",
     },
     {
       id: "skill-showcase-react",
@@ -214,6 +368,8 @@ export const portfolioData = {
       githubUrl: "https://github.com/rashidali0711",
       metrics: "Hackathon Project • Cross-Tab State Sync • Certificate Generator",
       reportFile: "Reactra_Hackathon_2.0_Skill_Showcase_Report.pdf",
+      status: "Completed",
+      ownership: "College Academic Project",
     },
   ] as Project[],
 
